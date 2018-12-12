@@ -31,9 +31,9 @@ for i in handles_in:
 					rslt = j['verdict']
 					if rslt == ("OK"):
 						count +=1
-						rslt_status.append("Correct")
-					else:
-						rslt_status.append("N/A")
+						rslt_status.append((j['problem']['index'],j['verdict']))
+					elif rslt == ("WRONG_ANSWER"):
+						rslt_status.append((j['problem']['index'],j['verdict']))
 	points.append(int(count))
 	result_status.append(rslt_status)
 
